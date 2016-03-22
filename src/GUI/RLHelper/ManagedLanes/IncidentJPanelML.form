@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[992, 608]"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="useGPValuesCB" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="frequencyPanel" min="-2" pref="456" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="durationPanel" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="useGPValuesCB" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="frequencyPanel" linkSize="10" pref="232" max="32767" attributes="0"/>
+                  <Component id="durationPanel" linkSize="10" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="frequencyPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Incident Frequencies"/>
+          </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[421, 200]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="239" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="warningLabel" min="-2" pref="193" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="useSeedFileValues" alignment="0" max="32767" attributes="0"/>
+                              <Component id="calculateProbabilitiesButton" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Component id="calculateProbabilitiesButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="useSeedFileValues" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="warningLabel" min="-2" pref="77" max="-2" attributes="0"/>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
+              </Group>
+              <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incidentTable">
+              <Properties>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="calculateProbabilitiesButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Calculate Frequencies..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateProbabilitiesButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useSeedFileValues">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Seed File Values"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useSeedFileValuesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="warningLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Multi-line label set in code"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Adjustment Factors"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jScrollPane12" pref="978" max="32767" attributes="0"/>
+              <Component id="afScrollPanel" alignment="1" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jScrollPane12" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="afScrollPanel" min="-2" pref="175" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="afScrollPanel">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel4">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="4"/>
+                <Property name="horizontalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="1"/>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+                  <Properties>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[136, 170]"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="incCAFs">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="0" rowCount="0"/>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+                  <Properties>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[136, 170]"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="incSAFs">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="0" rowCount="0"/>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+                  <Properties>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[136, 170]"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="incDAFs">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="0" rowCount="0"/>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane11">
+                  <Properties>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[136, 170]"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="incLAFs">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="0" rowCount="0"/>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane12">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel5">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="4"/>
+                <Property name="horizontalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="1"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Capacity Adjustment Factors (CAFs)"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="FFS Adjustment Factors (SAFs)"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Demand Adjustment Factors (DAFs)"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Lane Adjustment Factors"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="durationPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Incident Durations"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane5" pref="494" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="useNationDefaultData" alignment="0" pref="223" max="32767" attributes="0"/>
+                              <Component id="useStandardDistribution" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="useDefaultDurationsButton" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jScrollPane5" min="-2" pref="134" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="useStandardDistribution" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="useDefaultDurationsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="useNationDefaultData" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="distributionTable">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="0" rowCount="0"/>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="useNationDefaultData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use National Default Data"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useNationDefaultDataActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useStandardDistribution">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Standard Distribution"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useStandardDistributionActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useDefaultDurationsButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Default Durations"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useDefaultDurationsButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JCheckBox" name="useGPValuesCB">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Use Values Specified in GP - Incidents Tab"/>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="useGPValuesCBItemStateChanged"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,0 +1,85 @@
+For Lake:
+    Summary showing weather/incidents by month statistics
+    fix anything thats hard coded in incident scenario generation (search for todos)
+    Scenario Generator/Reliability Analysis: 
+    Incident event generator: 
+        HERS Model
+    ATDM:
+        "Tutorial" window - disable
+    HSR/RM Labels
+
+Meeting Items:
+    Warnings to break ATDM 3rd level comparison - better warning?
+    ATDM Incident reduction lane graphics?
+    ML incidents: Distribution/duration and AF defaults!!!
+
+Optional Improvements:
+    ATDMScenarioSelectorDialog info bar - add more info?
+    Strategies database - add more import/export options (ascii, html)
+    Cap color coding (at pti) - partially done
+    Consider other color coding for ATDM Scenario Selection
+    Edit ATDM After set
+    Renderer showing deviation from default values
+    PTI method?
+
+Pending Items:
+    -ONR/OFR remain factors
+    -ONR/OFR/W... Ramp Truck %
+
+Items to be deleted for 3-115 release:
+    -JavaDoc for missing items
+    -Delete adaptive ramp metering
+    -Hide additional versions of FREEVAL
+    -Restrict # segments, periods
+    -Remove some comments/unused codes
+
+====================================================
+
+Affects Lake's projects:
+    -RV, ER, Urban/Rural, Driver Population
+    -Facility Design Panel - Possible integrate?
+    -Table for guide in table (as hint maybe), in menu
+
+Question:
+    -New LOS for rural?
+
+====================================================
+
+Done:
+    -GUI: Reduce minimum width (now 600x400)
+    -Update Fuzzy Code, delete 10%
+    -Alpha 7% default, capped as 30%
+    -Input for Urban (default) or Rural facility
+        -New rural LOS
+        -A 0 6
+        -B >6 14
+        -C >14 22
+        -D >22 29
+        -E >29 39
+        -F >39
+    PCE:
+        -General add two types of Truck
+        -In table
+        -Level 2.0
+        -Rolling 2.5
+        -Truck to Single Unit Truck
+        -RV to Truck with tailor?
+        -No RV in equation
+        -Delete Mountain
+        -Equivalent
+        -Same for ML
+        -In fill data
+    -New ASCII format
+        -Rural Urban
+        -Delete RV % and ER
+        -New Truck
+    -Delete driver population, use CAF_POP and SAF_POP (not used for delay baseline) (period and segment) (default 1)
+        -In ASCII
+        -TTI use FFS*USAF, check
+        -In table
+        -calculation
+        -GP only
+        -In fill data
+        -In global input
+    -Table for guide (two)
+        -Add in global input

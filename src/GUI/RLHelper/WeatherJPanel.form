@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="962" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="metroAreaComboBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="extractButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="useSeedValuesButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="exportWeatherDataButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="importFromFileButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" pref="14" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="metroAreaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="extractButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="useSeedValuesButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="exportWeatherDataButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="importFromFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="289" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="136" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nearest Metropolitan Area:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="metroAreaComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="99">
+            <StringItem index="0" value="New Facility Specific"/>
+            <StringItem index="1" value="Akron,OH"/>
+            <StringItem index="2" value="Albany,NY"/>
+            <StringItem index="3" value="Albuquerque,NM"/>
+            <StringItem index="4" value="Allentown,PA"/>
+            <StringItem index="5" value="Atlanta,GA"/>
+            <StringItem index="6" value="Augusta,GA"/>
+            <StringItem index="7" value="Austin,TX"/>
+            <StringItem index="8" value="Bakersfield,CA"/>
+            <StringItem index="9" value="Baltimore,MD"/>
+            <StringItem index="10" value="Baton Rouge,LA"/>
+            <StringItem index="11" value="Birmingham,AL"/>
+            <StringItem index="12" value="Boise City,ID"/>
+            <StringItem index="13" value="Boston,MA"/>
+            <StringItem index="14" value="Buffalo,NY"/>
+            <StringItem index="15" value="Cape Coral,FL"/>
+            <StringItem index="16" value="Charleston,SC"/>
+            <StringItem index="17" value="Charlotte,NC"/>
+            <StringItem index="18" value="Chattanooga,TN"/>
+            <StringItem index="19" value="Chicago,IL"/>
+            <StringItem index="20" value="Cincinnati,OH"/>
+            <StringItem index="21" value="Cleveland,OH"/>
+            <StringItem index="22" value="Colorado Springs,CO"/>
+            <StringItem index="23" value="Columbia,SC"/>
+            <StringItem index="24" value="Columbus,OH"/>
+            <StringItem index="25" value="Dallas,TX"/>
+            <StringItem index="26" value="Dayton,OH"/>
+            <StringItem index="27" value="Denver,CO"/>
+            <StringItem index="28" value="Des Moines,IA"/>
+            <StringItem index="29" value="Detroit,MI"/>
+            <StringItem index="30" value="Durham,NC"/>
+            <StringItem index="31" value="El Paso,TX"/>
+            <StringItem index="32" value="Fresno,CA"/>
+            <StringItem index="33" value="Grand Rapids,MI"/>
+            <StringItem index="34" value="Greensboro,NC"/>
+            <StringItem index="35" value="Greenville,SC"/>
+            <StringItem index="36" value="Harrisburg,PA"/>
+            <StringItem index="37" value="Hartford,CT"/>
+            <StringItem index="38" value="Honolulu,HI"/>
+            <StringItem index="39" value="Houston,TX"/>
+            <StringItem index="40" value="Indianapolis,IN"/>
+            <StringItem index="41" value="Jackson,MS"/>
+            <StringItem index="42" value="Jacksonville,FL"/>
+            <StringItem index="43" value="Kansas City,MO"/>
+            <StringItem index="44" value="Knoxville,TN"/>
+            <StringItem index="45" value="Lakeland,FL"/>
+            <StringItem index="46" value="Lancaster,PA"/>
+            <StringItem index="47" value="Las Vegas,NV"/>
+            <StringItem index="48" value="Little Rock,AR"/>
+            <StringItem index="49" value="Los Angeles,CA"/>
+            <StringItem index="50" value="Louisville,KY"/>
+            <StringItem index="51" value="Madison,WI"/>
+            <StringItem index="52" value="McAllen,TX"/>
+            <StringItem index="53" value="Memphis,TN"/>
+            <StringItem index="54" value="Miami,FL"/>
+            <StringItem index="55" value="Milwaukee,WI"/>
+            <StringItem index="56" value="Minneapolis,MN"/>
+            <StringItem index="57" value="Modesto,CA"/>
+            <StringItem index="58" value="Nashville,TN"/>
+            <StringItem index="59" value="New Orleans,LA"/>
+            <StringItem index="60" value="New York,NY"/>
+            <StringItem index="61" value="North Port,FL"/>
+            <StringItem index="62" value="Ogden,UT"/>
+            <StringItem index="63" value="Oklahoma City,OK"/>
+            <StringItem index="64" value="Omaha,NE"/>
+            <StringItem index="65" value="Orlando,FL"/>
+            <StringItem index="66" value="Oxnard,CA"/>
+            <StringItem index="67" value="Palm Bay,FL"/>
+            <StringItem index="68" value="Philadelphia,PA"/>
+            <StringItem index="69" value="Phoenix,AZ"/>
+            <StringItem index="70" value="Pittsburgh,PA"/>
+            <StringItem index="71" value="Portland,ME"/>
+            <StringItem index="72" value="Portland,OR"/>
+            <StringItem index="73" value="Poughkeepsie,NY"/>
+            <StringItem index="74" value="Providence,RI"/>
+            <StringItem index="75" value="Provo,UT"/>
+            <StringItem index="76" value="Raleigh,NC"/>
+            <StringItem index="77" value="Richmond,VA"/>
+            <StringItem index="78" value="Riverside,CA"/>
+            <StringItem index="79" value="Rochester,NY"/>
+            <StringItem index="80" value="Sacramento,CA"/>
+            <StringItem index="81" value="San Antonio,TX"/>
+            <StringItem index="82" value="San Diego,CA"/>
+            <StringItem index="83" value="San Francisco,CA"/>
+            <StringItem index="84" value="San Jose,CA"/>
+            <StringItem index="85" value="Scranton,PA"/>
+            <StringItem index="86" value="Seattle,WA"/>
+            <StringItem index="87" value="Springfield,MA"/>
+            <StringItem index="88" value="St. Louis,MO"/>
+            <StringItem index="89" value="Stockton,CA"/>
+            <StringItem index="90" value="Syracuse,NY"/>
+            <StringItem index="91" value="Toledo,OH"/>
+            <StringItem index="92" value="Tucson,AZ"/>
+            <StringItem index="93" value="Tulsa,OK"/>
+            <StringItem index="94" value="Virginia Beach,VA"/>
+            <StringItem index="95" value="Washington,DC"/>
+            <StringItem index="96" value="Wichita,KS"/>
+            <StringItem index="97" value="Worcester,MA"/>
+            <StringItem index="98" value="Youngstown,OH"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="extractButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Extract Longterm Regional Weather Data"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="extractButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="weatherProbabilityTable">
+          <Properties>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="fillsViewportHeight" type="boolean" value="true"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <Properties>
+        <Property name="horizontalScrollBarPolicy" type="int" value="32"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="adjustmentFactorTable">
+          <Properties>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="fillsViewportHeight" type="boolean" value="true"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Please enter probabilities, durations, and adjustment factors for weather events, or fill by specifying the nearest metropolitan area:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="useSeedValuesButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Use Values Stored In Seed"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useSeedValuesButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="exportWeatherDataButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Export"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportWeatherDataButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="importFromFileButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Import"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="importFromFileButtonActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

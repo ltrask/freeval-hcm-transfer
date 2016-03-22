@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Filter Options"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPanel2" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel10" min="-2" pref="135" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="filterButton" min="-2" pref="121" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="filterButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Min"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Max"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Scenario Properties"/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="jPanel6" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel7" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel8" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jPanel8" max="32767" attributes="0"/>
+                          <Component id="jPanel5" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel6" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel4">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="4"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="demandMultLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Demand Multiplier Range:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numWZLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="# of Work Zones Range:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numIncidentsLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="# of Incidents Range:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numWeatherLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="# of Weather Events Range:"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel5">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="4"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JCheckBox" name="demandMultRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="demandMultRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="numWZRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numWZRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="numIncidentsRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numIncidentsRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="numWeatherRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numWeatherRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel6">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="4"/>
+                <Property name="verticalGap" type="int" value="3"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="demandMultMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numWZMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numIncidentsMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numWeatherMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel7">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="4"/>
+                <Property name="verticalGap" type="int" value="3"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="demandMultMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numWZMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numIncidentsMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="numWeatherMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel8">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="4"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="demandMultRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numWZRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numIncidentsRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="numWeatherRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="RL Results Values"/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel9" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <Component id="jPanel11" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel12" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel13" min="-2" pref="166" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel13" alignment="0" pref="45" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jPanel12" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jPanel11" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jPanel10" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jPanel9" alignment="0" pref="45" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel9">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="2"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="maxTTILabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Max TTI Value Range:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="maxDelayLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Max Delay (hrs) Range:"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel10">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="2"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JCheckBox" name="maxTTIRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="maxTTIRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="maxDelayRangeCheck">
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="maxDelayRangeCheckItemStateChanged"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel11">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="2"/>
+                <Property name="verticalGap" type="int" value="3"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="maxTTIMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="maxDelayMin">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel12">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="2"/>
+                <Property name="verticalGap" type="int" value="3"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="maxTTIMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="maxDelayMax">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel13">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="2"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="maxTTIRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="maxDelayRangeLabel">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Range"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="cancelButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="filterButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Filter"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Filter"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Values Range"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

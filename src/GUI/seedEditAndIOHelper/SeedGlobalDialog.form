@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPanel" name="fillMLJPanel">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="4"/>
+        <Property name="rows" type="int" value="7"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="separationCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Separation Type"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="separationCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="separationCB">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Marking"/>
+                <StringItem index="1" value="Buffer"/>
+                <StringItem index="2" value="Barrier"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="accDecLengthMLCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Ramp Acc/Dec Length (ft)"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="accDecLengthMLCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="accDecLengthMLText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="500"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="accDecLengthMLTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="numOfMLLanesCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Num Of ML Lanes"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numOfMLLanesCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="numOfMLLanesText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numOfMLLanesTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="numOfMLRampLanesCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Num Of ML Ramp Lanes"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numOfMLRampLanesCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="numOfMLRampLanesText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numOfMLRampLanesTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="MLFFSCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="ML FFS (mph)"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="MLFFSCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="MLFFSText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="70"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="MLFFSTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="rampMLFFSCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="ML Ramp FFS (mph)"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rampMLFFSCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="rampMLFFSText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="45"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rampMLFFSTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="truckSingleMLCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="ML Single Unit Trucks and Buses (%)"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="truckSingleMLCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="truckSingleMLText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="5"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="truckSingleMLTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="truckTrailerMLCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="ML Tractor Trailers (%)"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[200, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="truckTrailerMLCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="truckTrailerMLText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="truckTrailerMLTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel17">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel21">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel22">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel23">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel24">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="checkButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Verify Data"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="title" type="java.lang.String" value="Project Properties"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="optionsJPanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="generalJPanel" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="okButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="generalJPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="optionsJPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="okButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="okButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OK"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="getRootPane().setDefaultButton(okButton);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="cancelButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="generalJPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="General Information"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="4"/>
+        <Property name="rows" type="int" value="6"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Project Name"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[70, 16]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="seedNameText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="New Project"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[90, 28]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Number Of HCM Segments"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="numOfSegmentsText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="7"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numOfSegmentsTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Study Period Start Time (hh:mm)"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="startHour">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="24">
+                    <StringItem index="0" value="00"/>
+                    <StringItem index="1" value="01"/>
+                    <StringItem index="2" value="02"/>
+                    <StringItem index="3" value="03"/>
+                    <StringItem index="4" value="04"/>
+                    <StringItem index="5" value="05"/>
+                    <StringItem index="6" value="06"/>
+                    <StringItem index="7" value="07"/>
+                    <StringItem index="8" value="08"/>
+                    <StringItem index="9" value="09"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                    <StringItem index="21" value="21"/>
+                    <StringItem index="22" value="22"/>
+                    <StringItem index="23" value="23"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="17"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="startMin">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="00"/>
+                    <StringItem index="1" value="15"/>
+                    <StringItem index="2" value="30"/>
+                    <StringItem index="3" value="45"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Study Period End Time (hh:mm)"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="endHour">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="24">
+                    <StringItem index="0" value="00"/>
+                    <StringItem index="1" value="01"/>
+                    <StringItem index="2" value="02"/>
+                    <StringItem index="3" value="03"/>
+                    <StringItem index="4" value="04"/>
+                    <StringItem index="5" value="05"/>
+                    <StringItem index="6" value="06"/>
+                    <StringItem index="7" value="07"/>
+                    <StringItem index="8" value="08"/>
+                    <StringItem index="9" value="09"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                    <StringItem index="21" value="21"/>
+                    <StringItem index="22" value="22"/>
+                    <StringItem index="23" value="23"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="18"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="endMin">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="00"/>
+                    <StringItem index="1" value="15"/>
+                    <StringItem index="2" value="30"/>
+                    <StringItem index="3" value="45"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Jam Density (pc/mi/ln)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jamDensityText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="190"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jamDensityTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Capacity Drop due to Breakdown (%)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="capacityDropText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="7"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 28]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="capacityDropTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" GP Vehicle Occupancy (p/veh)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="gpOccText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1.0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="gpOccTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="mlOccLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" ML Vehicle Occupancy (p/veh)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="mlOccText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1.0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="mlOccTextFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value=" Area Type"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="urbanButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Urban"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="ruralButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Rural"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+        </Component>
+        <Component class="javax.swing.JButton" name="addSegButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="+Segment"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addSegButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="delSegButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-Segment"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delSegButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="addPeriodButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="+Period"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPeriodButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="delPeriodButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-Period"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delPeriodButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="optionsJPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Analysis Options"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="2"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="ffsKnownCheck">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Free Flow Speed Known"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ffsKnownCheckItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="manageLaneCheck">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Managed Lanes Analysis"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="manageLaneCheckItemStateChanged"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Prefill Global Values"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="fillGPJPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="General Purpose Segments">
+                <Property name="tabTitle" type="java.lang.String" value="General Purpose Segments"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="4"/>
+            <Property name="rows" type="int" value="7"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="terrainCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="General Terrain"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[100, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="terrainCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="terrainComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="terrainComboBoxActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ETCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Current Truck PCE"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ETCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JPanel" name="jPanel4">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="0"/>
+                <Property name="rows" type="int" value="1"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="ETText">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2.0"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[50, 28]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETTextFocusGained"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="pceGuideButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Look-up Tables"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pceGuideButtonActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JCheckBox" name="numOfMainlineLanesCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Num Of Mainline Lanes"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numOfMainlineLanesCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="numOfMainlineLanesText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="3"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numOfMainlineLanesTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="mainlineFFSCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Mainline FFS (mph)"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="mainlineFFSCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="mainlineFFSText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="70"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="mainlineFFSTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="laneWidthCheck">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lane Width (ft)"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="laneWidthCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="laneWidthText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="12"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="laneWidthTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="lateralClearanceCheck">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lateral Clearance (ft)"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="lateralClearanceCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="lateralClearanceText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="4"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lateralClearanceTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="numOfRampLanesCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Num Of Ramp Lanes"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="numOfRampLanesCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="numOfRampLanesText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numOfRampLanesTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="rampFFSCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Ramp FFS (mph)"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rampFFSCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="rampFFSText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="45"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rampFFSTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="accDecLengthCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Ramp Acc/Dec Length (ft)"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="accDecLengthCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="accDecLengthText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="500"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="accDecLengthTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="rampMeteringCheck">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ramp Metering Rate (veh/h)"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rampMeteringCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="rampMeteringText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2100"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rampMeteringTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="truckSingleCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Single Unit Trucks and Buses (%)"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="truckSingleCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="truckSingleText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="5"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="truckSingleTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="truckTrailerCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Tractor Trailers (%)"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="truckTrailerCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="truckTrailerText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="truckTrailerTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="DPCAFCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Driver Population CAF"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="DPCAFCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="DPCAFText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DPCAFTextFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="DPSAFCheck">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Driver Population SAF"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="DPSAFCheckItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="DPSAFText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 28]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DPSAFTextFocusGained"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

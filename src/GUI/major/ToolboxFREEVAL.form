@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="cfgPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="mlPanel" min="-2" pref="120" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="raPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="atdmPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="cfgPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="mlPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="raPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="atdmPanel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="raPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Reliability Analysis (RL)"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="3"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="geneScenButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Generate"/>
+            <Property name="toolTipText" type="java.lang.String" value="Generate reliability analysis scenarios for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="geneScenButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteAllScenButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Delete all reliability scenarios for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteAllScenButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="showRLSummaryButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Summary"/>
+            <Property name="toolTipText" type="java.lang.String" value="Show reliability analysis summary for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showRLSummaryButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="cfgPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Edit Seed Facility"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="4"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="globalButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Global Input"/>
+            <Property name="toolTipText" type="java.lang.String" value="Edit global/facility/seed input and prefill data for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="globalButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="adaptiveButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Adap.R.M."/>
+            <Property name="toolTipText" type="java.lang.String" value="Edit Adaptive Ramp Metering Parameters"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adaptiveButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="fillButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fill Data"/>
+            <Property name="toolTipText" type="java.lang.String" value="Quick fill data in input table of currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fillButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="atdmPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="ATDM Analysis"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="3"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="atdmAssignButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Configure"/>
+            <Property name="toolTipText" type="java.lang.String" value="Configure and assign ATDM analysis strategies and plans for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atdmAssignButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="atdmDeleteButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Delete one or all ATDM sets in currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atdmDeleteButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="atdmSummaryButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Summary"/>
+            <Property name="toolTipText" type="java.lang.String" value="Show ATDM analysis summary for currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atdmSummaryButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="mlPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Managed Lanes"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="0"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="mlButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Turn On"/>
+            <Property name="toolTipText" type="java.lang.String" value="Toggle whether managed lanes are used in currently selected project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mlButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

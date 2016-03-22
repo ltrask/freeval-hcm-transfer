@@ -1,0 +1,33 @@
+Update 11242014:
+    1. Facility LOS calculation fix, remove combined LOS.
+    2. Facility summary column in now in bold.
+    3. Open last used project/seed function bug is fixed.
+    4. Managed Lanes contour table speed color fixed.
+    5. Work zone equation bug fixed.
+
+Update 12082014:
+    1. Minor GUI updates.
+    2. Limit of number of segments and number of periods now increase.
+    3. License expire 03/01/2015, and require network when use.
+    4. VHD calculation updates.
+
+Update 12232014:
+    1. Major Update to FREEVAL-WZ GUI.
+    2. Updated RL summary dialog with a new scenario summaries table.
+    3. Added ability to export a scenario to a FREEVAL-DSS project.
+    4. Bug fix for demand multiplier filter options.
+
+Update 12312014:
+    1. Adaptive Ramp Metering bug fix for ATDM and FREEVAL-DSS.
+    2. On-ramp diversion bug fix for FREEVAL-DSS.
+
+Update 01072015
+    1. Updated labeling for RL/ATDM dialogs
+    2. Updated many variable names to better reflect HCM methodology
+    3. Fixed bug in FREEVAL-DSS where wrong ScenarioInfo was exported to .dss file.
+
+Update 01282015
+    1. Updates to reflect changes discussed during TRB
+    2. Added some HCM Look-up Tables
+    3. Scenario Generation Bug Fixes
+    4. Added factor for Capacity Increase Due to Ramp Metering

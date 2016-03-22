@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="facilityGeometryButtonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="newOrExistingButtonGroup">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="existingFacilityPanel" alignment="1" max="32767" attributes="0"/>
+                          <Component id="newFacilityPanel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="newFacilityPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="existingFacilityPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="newFacilityPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Start from New Facility">
+              <Font PropertyName="font" name="Dialog" size="13" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="newProjectNameTextField" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="createNewButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                  <Component id="newProjectNameTextField" alignment="3" pref="0" max="32767" attributes="0"/>
+                  <Component id="createNewButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Project Name: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="newProjectNameTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="New Project"/>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="newProjectNameTextFieldFocusGained"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="createNewButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Create"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createNewButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="cancelButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="existingFacilityPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Import From Existing Facility">
+              <Font PropertyName="font" name="Lucida Grande" size="13" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="useGeometryPanel" pref="601" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="seedFileChooser" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="useGeometryPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="seedFileChooser" min="-2" pref="355" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JFileChooser" name="seedFileChooser">
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="seedFileChooserPropertyChange"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JPanel" name="useGeometryPanel">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="2"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="useFacilityGeometryCheckBox">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="facilityGeometryButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Use Facility Geometry Only"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useFacilityGeometryCheckBoxActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="useFacilityDemandsCheckBox">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="facilityGeometryButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Use Included Facility Demands"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useFacilityDemandsCheckBoxActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="2"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JRadioButton" name="startFromNewRadioButton">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="newOrExistingButtonGroup"/>
+            </Property>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Start From New Facility"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startFromNewRadioButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="startFromExistingRadioButton">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="newOrExistingButtonGroup"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Import From Existing Facility"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startFromExistingRadioButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

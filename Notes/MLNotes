@@ -1,0 +1,10 @@
+-ML basic capacity is used to calculate other ML segments' capacity
+-ML over saturated use same methods as GP over saturated with vertical on ramp delay (as access delay)
+-Access segment is calculated as weaving segment with special parameters (LC, NW, Demand, etc.) need more discussion
+-Access segment has a special type of delay that equals the on ramp delay on the parallel segment
+
+-ML segments have same length as GP segments, and they are one to one
+-ML cannot be used as ATDM strategy, but may perform ATDM on ML (TBC)
+-ML segments speed is capped at the ML basic segment speed at same demand
+
+-Access segment: GP use extra lanes and demand from ML in both under and over. ML use lanes and demand from itself.

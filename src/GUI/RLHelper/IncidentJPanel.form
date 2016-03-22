@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jPanel1" min="-2" pref="462" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Component id="jPanel2" pref="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" linkSize="10" pref="232" max="32767" attributes="0"/>
+                  <Component id="jPanel3" linkSize="10" max="32767" attributes="0"/>
+              </Group>
+              <Component id="jPanel2" pref="376" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Incident Frequencies"/>
+          </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[421, 200]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="245" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="useSeedFileValues" alignment="0" max="32767" attributes="0"/>
+                      <Component id="calculateProbabilitiesButton" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="warningLabel" min="-2" pref="183" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Component id="calculateProbabilitiesButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="useSeedFileValues" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="warningLabel" pref="140" max="32767" attributes="0"/>
+              </Group>
+              <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incidentTable">
+              <Properties>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="calculateProbabilitiesButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Calculate Frequencies..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateProbabilitiesButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useSeedFileValues">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Seed File Values"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useSeedFileValuesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="warningLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Multi-line label set in code"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Adjustment Factors"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="3" gridWidth="1" gridHeight="1" fill="1" ipadX="431" ipadY="61" insetsTop="0" insetsLeft="6" insetsBottom="0" insetsRight="6" anchor="10" weightX="1.0" weightY="1.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incDAFs">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="7">
+                    <Column editable="false" title="Number of Lanes (1 Direction)" type="java.lang.Object">
+                      <Data value="2"/>
+                      <Data value="3"/>
+                      <Data value="4"/>
+                      <Data value="5"/>
+                      <Data value="6"/>
+                      <Data value="7"/>
+                      <Data value="8"/>
+                    </Column>
+                    <Column editable="true" title="No Incident" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                    <Column editable="true" title="Shoulder Closure" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                    <Column editable="true" title="One Lane Closure" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="null"/>
+                    </Column>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="jLabel1" property="font" relativeSize="true" size="0"/>
+              </FontInfo>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="FFS Adjustment Factors (SAFs)"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="0" gridWidth="3" gridHeight="1" fill="0" ipadX="331" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="jLabel2" property="font" relativeSize="true" size="0"/>
+              </FontInfo>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Capacity Adjustment Factors (CAFs)"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="294" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="1" gridWidth="1" gridHeight="1" fill="1" ipadX="431" ipadY="61" insetsTop="0" insetsLeft="6" insetsBottom="0" insetsRight="6" anchor="10" weightX="1.0" weightY="1.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incSAFs">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="7">
+                    <Column editable="false" title="Number of Lanes (1 Direction)" type="java.lang.Object">
+                      <Data value="2"/>
+                      <Data value="3"/>
+                      <Data value="4"/>
+                      <Data value="5"/>
+                      <Data value="6"/>
+                      <Data value="7"/>
+                      <Data value="8"/>
+                    </Column>
+                    <Column editable="true" title="No Incident" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                    <Column editable="true" title="Shoulder Closure" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                    <Column editable="true" title="One Lane Closure" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="jLabel3" property="font" relativeSize="true" size="0"/>
+              </FontInfo>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Demand Adjustment Factors (DAFs)"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="2" gridWidth="1" gridHeight="1" fill="0" ipadX="295" ipadY="0" insetsTop="6" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="1" gridWidth="1" gridHeight="1" fill="1" ipadX="431" ipadY="61" insetsTop="0" insetsLeft="6" insetsBottom="0" insetsRight="6" anchor="10" weightX="1.0" weightY="1.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incCAFs">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="7">
+                    <Column editable="false" title="Number of Lanes (1 Direction)" type="java.lang.Object">
+                      <Data value="2"/>
+                      <Data value="3"/>
+                      <Data value="4"/>
+                      <Data value="5"/>
+                      <Data value="6"/>
+                      <Data value="7"/>
+                      <Data value="8"/>
+                    </Column>
+                    <Column editable="true" title="No Incident" type="java.lang.Float">
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                      <Data value="1.0"/>
+                    </Column>
+                    <Column editable="true" title="Shoulder Closure" type="java.lang.Float">
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                      <Data value="0.81"/>
+                    </Column>
+                    <Column editable="true" title="One Lane Closure" type="java.lang.Float">
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                      <Data value="0.7"/>
+                    </Column>
+                  </Table>
+                </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="3" gridWidth="1" gridHeight="1" fill="1" ipadX="431" ipadY="61" insetsTop="0" insetsLeft="6" insetsBottom="0" insetsRight="6" anchor="10" weightX="1.0" weightY="1.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="incLAFs">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="6" rowCount="7">
+                    <Column editable="true" title="Number of Lanes" type="java.lang.Object">
+                      <Data value="2"/>
+                      <Data value="3"/>
+                      <Data value="4"/>
+                      <Data value="5"/>
+                      <Data value="6"/>
+                      <Data value="7"/>
+                      <Data value="8"/>
+                    </Column>
+                    <Column editable="true" title="Shoulder Closure" type="java.lang.Object"/>
+                    <Column editable="true" title="One Lane Closure" type="java.lang.Object"/>
+                    <Column editable="true" title="Two Lane Closure" type="java.lang.Object"/>
+                    <Column editable="true" title="Three Lane Closure" type="java.lang.Object"/>
+                    <Column editable="true" title="Four Lane Closure" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="jLabel4" property="font" relativeSize="true" size="0"/>
+              </FontInfo>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Lane Adjustment Factors"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="2" gridWidth="1" gridHeight="1" fill="0" ipadX="291" ipadY="0" insetsTop="6" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Incident Durations"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane5" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="useNationDefaultData" min="-2" pref="234" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="useDefaultDurationsButton" min="-2" pref="234" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="useStandardDistribution" min="-2" pref="234" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton1" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jScrollPane5" min="-2" pref="134" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="useDefaultDurationsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="useNationDefaultData" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="useStandardDistribution" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="distributionTable">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="0" rowCount="0"/>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="useNationDefaultData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use National Default Data"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useNationDefaultDataActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useStandardDistribution">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Saved Seed File Distribution"/>
+            <Property name="toolTipText" type="java.lang.String" value="If distribution data has been saved with the current project seed, use this button to return to the saved distribution values."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useStandardDistributionActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="useDefaultDurationsButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Default Durations"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useDefaultDurationsButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Use Saved Seed File Durations"/>
+            <Property name="toolTipText" type="java.lang.String" value="If duration data has been saved with the current project seed, use this button to return to the saved duration values."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
