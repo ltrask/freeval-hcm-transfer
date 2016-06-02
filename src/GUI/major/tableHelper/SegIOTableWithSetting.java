@@ -341,16 +341,14 @@ public class SegIOTableWithSetting implements FREEVAL_TableWithSetting {
         TableCellSetting setting = findCellSetting(row);
         if (isFirstColumn) {
             return setting.header;
-        } else {
-            if (isSensorView) {
-                if (col == sensorSet.getNumSensors()) {
-                    return 0.0f;
-                } else {
-                    return seed.getValueString(setting.identifier, sensorSet.convertSensorIdxToSegment(col), period, scen, atdm);
-                }
+        } else if (isSensorView) {
+            if (col == sensorSet.getNumSensors()) {
+                return 0.0f;
             } else {
-                return seed.getValueString(setting.identifier, col, period, scen, atdm);
+                return seed.getValueString(setting.identifier, sensorSet.convertSensorIdxToSegment(col), period, scen, atdm);
             }
+        } else {
+            return seed.getValueString(setting.identifier, col, period, scen, atdm);
         }
     }
 
@@ -2380,7 +2378,7 @@ public class SegIOTableWithSetting implements FREEVAL_TableWithSetting {
 
     private boolean showOutput = false;
 
-    private boolean showComputedDownstreamValues = false;
+    private boolean showComputedDownstreamValues = true;
 
     private boolean showGP = true;
 

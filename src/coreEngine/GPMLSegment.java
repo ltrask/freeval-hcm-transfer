@@ -638,12 +638,10 @@ public class GPMLSegment implements Serializable {
         //Exhibit 11-8
         if (inLaneWidth_ft >= 12) {
             f_LW = 0;
+        } else if (inLaneWidth_ft >= 11) {
+            f_LW = 1.9f;
         } else {
-            if (inLaneWidth_ft >= 11) {
-                f_LW = 1.9f;
-            } else {
-                f_LW = 6.6f;
-            }
+            f_LW = 6.6f;
         }
 
         //Equation 11 - 1
@@ -1009,12 +1007,12 @@ public class GPMLSegment implements Serializable {
                     case CEConst.SEG_TYPE_ONR:
                         scenType[period] = inUpSeg.inMainlineNumLanes.get(period)
                                 <= inMainlineNumLanes.get(period) - inOnNumLanes //.get(period)
-                                        ? CEConst.SEG_TYPE_ONR_B : inType;
+                                ? CEConst.SEG_TYPE_ONR_B : inType;
                         break;
                     case CEConst.SEG_TYPE_OFR:
                         scenType[period] = inDownSeg.inMainlineNumLanes.get(period)
                                 <= inMainlineNumLanes.get(period) - inOffNumLanes //.get(period)
-                                        ? CEConst.SEG_TYPE_OFR_B : inType;
+                                ? CEConst.SEG_TYPE_OFR_B : inType;
                         break;
                     case CEConst.SEG_TYPE_W:
                         scenType[period] = inShort_ft > funcMaxShort(period) ? CEConst.SEG_TYPE_W_B : inType;
@@ -1274,39 +1272,25 @@ public class GPMLSegment implements Serializable {
         if (numOfRampLanes == 1) {
             if (rampFreeFlowSpeed > 50) {
                 result = 2200;
+            } else if (rampFreeFlowSpeed > 40) {
+                result = 2100;
+            } else if (rampFreeFlowSpeed > 30) {
+                result = 2000;
+            } else if (rampFreeFlowSpeed >= 20) {
+                result = 1900;
             } else {
-                if (rampFreeFlowSpeed > 40) {
-                    result = 2100;
-                } else {
-                    if (rampFreeFlowSpeed > 30) {
-                        result = 2000;
-                    } else {
-                        if (rampFreeFlowSpeed >= 20) {
-                            result = 1900;
-                        } else {
-                            result = 1800;
-                        }
-                    }
-                }
+                result = 1800;
             }
+        } else if (rampFreeFlowSpeed > 50) {
+            result = 4400;
+        } else if (rampFreeFlowSpeed > 40) {
+            result = 4200;
+        } else if (rampFreeFlowSpeed > 30) {
+            result = 4000;
+        } else if (rampFreeFlowSpeed >= 20) {
+            result = 3800;
         } else {
-            if (rampFreeFlowSpeed > 50) {
-                result = 4400;
-            } else {
-                if (rampFreeFlowSpeed > 40) {
-                    result = 4200;
-                } else {
-                    if (rampFreeFlowSpeed > 30) {
-                        result = 4000;
-                    } else {
-                        if (rampFreeFlowSpeed >= 20) {
-                            result = 3800;
-                        } else {
-                            result = 3600;
-                        }
-                    }
-                }
-            }
+            result = 3600;
         }
 
         return result;
@@ -1609,12 +1593,10 @@ public class GPMLSegment implements Serializable {
             float S_O;
             if (v_OA < 500) {
                 S_O = scenMainlineFFS[period];
+            } else if (v_OA > 2300) {
+                S_O = (float) (scenMainlineFFS[period] - 6.53 - 0.006 * (v_OA - 2300));
             } else {
-                if (v_OA > 2300) {
-                    S_O = (float) (scenMainlineFFS[period] - 6.53 - 0.006 * (v_OA - 2300));
-                } else {
-                    S_O = (float) (scenMainlineFFS[period] - 0.0036 * (v_OA - 500));
-                }
+                S_O = (float) (scenMainlineFFS[period] - 0.0036 * (v_OA - 500));
             }
             float S = (v_R12 + v_OA * N_O) / ((v_R12 / S_R) + (v_OA * N_O / S_O));
             return S;
@@ -2267,19 +2249,17 @@ public class GPMLSegment implements Serializable {
             if (I_NW <= 1300) {
                 //Equation 12 - 12
                 LC_NW = (float) (0.206 * scenVNW[period] + 0.542 * inShort_ft - 192.6 * scenMainlineNumLanes[period]);
+            } else if (I_NW >= 1950) {
+                //Equation 12 - 13
+                LC_NW = (float) (2135 + 0.223 * (scenVNW[period] - 2000));
             } else {
-                if (I_NW >= 1950) {
-                    //Equation 12 - 13
-                    LC_NW = (float) (2135 + 0.223 * (scenVNW[period] - 2000));
+                LC_NW1 = (float) (0.206 * scenVNW[period] + 0.542 * inShort_ft - 192.6 * scenMainlineNumLanes[period]);
+                LC_NW2 = (float) (2135 + 0.223 * (scenVNW[period] - 2000));
+                if (LC_NW1 >= LC_NW2) {
+                    LC_NW = LC_NW2;
                 } else {
-                    LC_NW1 = (float) (0.206 * scenVNW[period] + 0.542 * inShort_ft - 192.6 * scenMainlineNumLanes[period]);
-                    LC_NW2 = (float) (2135 + 0.223 * (scenVNW[period] - 2000));
-                    if (LC_NW1 >= LC_NW2) {
-                        LC_NW = LC_NW2;
-                    } else {
-                        //Equation 12 - 14
-                        LC_NW = LC_NW1 + (LC_NW2 - LC_NW1) * (I_NW - 1300) / 650;
-                    }
+                    //Equation 12 - 14
+                    LC_NW = LC_NW1 + (LC_NW2 - LC_NW1) * (I_NW - 1300) / 650;
                 }
             }
             //Equation 12 - 16
@@ -2528,12 +2508,10 @@ public class GPMLSegment implements Serializable {
                 } else {
                     capacityDropFactor = 1f;
                 }
+            } else if (UV[(step + NUM_STEPS - 1) % NUM_STEPS] > CEConst.ZERO && inDownSeg.UV[(step + NUM_STEPS - 1) % NUM_STEPS] <= CEConst.ZERO) {
+                inDownSeg.capacityDropFactor = 1 - inCapacityDropPercentage;
             } else {
-                if (UV[(step + NUM_STEPS - 1) % NUM_STEPS] > CEConst.ZERO && inDownSeg.UV[(step + NUM_STEPS - 1) % NUM_STEPS] <= CEConst.ZERO) {
-                    inDownSeg.capacityDropFactor = 1 - inCapacityDropPercentage;
-                } else {
-                    inDownSeg.capacityDropFactor = 1f;
-                }
+                inDownSeg.capacityDropFactor = 1f;
             }
 
             //for every time step---------------step 5 to 25----------(order is different from HCM)--------
@@ -2548,6 +2526,9 @@ public class GPMLSegment implements Serializable {
             MI[step] = funcMI(period, step, inOverMode);
             if (inDownSeg != null && (inDownSeg.inType == CEConst.SEG_TYPE_ONR || inDownSeg.inType == CEConst.SEG_TYPE_W || inDownSeg.inType == CEConst.SEG_TYPE_ACS)) {
                 //on-ramp calculation
+                if (step == 0) {
+                    inDownSeg.scenTotalRM[period] = -1.0f;  //Resetting RM Rate counter (-1 (instead of 0) indicates to the engine it has not been used)
+                }
                 inDownSeg.ONRF[step] = inDownSeg.funcONRF(scen, atdm, period, step, inOverMode);
             }
 
@@ -2822,14 +2803,12 @@ public class GPMLSegment implements Serializable {
             } else {
                 result = funcDummyMF(period, step, inOverMode, true) + UV[step - 1];
             }
+        } else if (step == 0) {
+            result = inUpSeg.MF[step] + ONRF[step]
+                    - OFRF[step] + UV[NUM_STEPS - 1];
         } else {
-            if (step == 0) {
-                result = inUpSeg.MF[step] + ONRF[step]
-                        - OFRF[step] + UV[NUM_STEPS - 1];
-            } else {
-                result = inUpSeg.MF[step] + ONRF[step]
-                        - OFRF[step] + UV[step - 1];
-            }
+            result = inUpSeg.MF[step] + ONRF[step]
+                    - OFRF[step] + UV[step - 1];
         }
         return result;
     }
@@ -2863,11 +2842,9 @@ public class GPMLSegment implements Serializable {
                             - NV[NUM_STEPS - 1];
                 }
             }
-        } else {
-            if (UV[step - 1] > CEConst.ZERO) {
-                result2 = KQ[step] * inSegLength_ft / 5280f + SF[step - 1]
-                        - NV[step - 1];
-            }
+        } else if (UV[step - 1] > CEConst.ZERO) {
+            result2 = KQ[step] * inSegLength_ft / 5280f + SF[step - 1]
+                    - NV[step - 1];
         }
 
         result2 = Math.max(0, result2);
@@ -2990,10 +2967,8 @@ public class GPMLSegment implements Serializable {
                 if (inDownSeg.UV[NUM_STEPS - 1] < CEConst.ZERO) {
                     return Float.MAX_VALUE;
                 }
-            } else {
-                if (inDownSeg.UV[step - 1] < CEConst.ZERO) {
-                    return Float.MAX_VALUE;
-                }
+            } else if (inDownSeg.UV[step - 1] < CEConst.ZERO) {
+                return Float.MAX_VALUE;
             }
 
             int _WTT = inDownSeg.WTT;
@@ -3177,6 +3152,7 @@ public class GPMLSegment implements Serializable {
         result = Math.max(result, 0);
         if (rampMeterActive) {
             scenStepsRampMetered[period] += 1;
+            // Note the next line checks to see if the total as it is initialized at -1 to indicate it RM has not been used.
             scenTotalRM[period] = scenTotalRM[period] < 0 ? scenRM_veh[period] : scenTotalRM[period] + scenRM_veh[period];
         }
 //        System.out.println(String.valueOf(inIndex + 1) + ","
@@ -3406,47 +3382,31 @@ public class GPMLSegment implements Serializable {
                 //Exhibit 11-5: HCM Page 11-7
                 if (density_pc <= 11.5) {
                     return "A";
+                } else if (density_pc <= 18.5) {
+                    return "B";
+                } else if (density_pc <= 26.5) {
+                    return "C";
+                } else if (density_pc <= 35.5) {
+                    return "D";
+                } else if (density_pc <= 45.5) {
+                    return "E";
                 } else {
-                    if (density_pc <= 18.5) {
-                        return "B";
-                    } else {
-                        if (density_pc <= 26.5) {
-                            return "C";
-                        } else {
-                            if (density_pc <= 35.5) {
-                                return "D";
-                            } else {
-                                if (density_pc <= 45.5) {
-                                    return "E";
-                                } else {
-                                    return "F";
-                                }
-                            }
-                        }
-                    }
+                    return "F";
                 }
-            } else {
-                //new LOS for rural
+            } else //new LOS for rural
+            {
                 if (density_pc <= 6.5) {
                     return "A";
+                } else if (density_pc <= 14.5) {
+                    return "B";
+                } else if (density_pc <= 22.5) {
+                    return "C";
+                } else if (density_pc <= 29.5) {
+                    return "D";
+                } else if (density_pc <= 39.5) {
+                    return "E";
                 } else {
-                    if (density_pc <= 14.5) {
-                        return "B";
-                    } else {
-                        if (density_pc <= 22.5) {
-                            return "C";
-                        } else {
-                            if (density_pc <= 29.5) {
-                                return "D";
-                            } else {
-                                if (density_pc <= 39.5) {
-                                    return "E";
-                                } else {
-                                    return "F";
-                                }
-                            }
-                        }
-                    }
+                    return "F";
                 }
             }
         } else {
@@ -3456,24 +3416,16 @@ public class GPMLSegment implements Serializable {
                             : scenIADensity_pc[period]);
             if (density_pc <= 10.5) {
                 return "A";
+            } else if (density_pc <= 20.5) {
+                return "B";
+            } else if (density_pc <= 28.5) {
+                return "C";
+            } else if (density_pc <= 35.5) {
+                return "D";
+            } else if (density_pc <= 43.5) {
+                return "E";
             } else {
-                if (density_pc <= 20.5) {
-                    return "B";
-                } else {
-                    if (density_pc <= 28.5) {
-                        return "C";
-                    } else {
-                        if (density_pc <= 35.5) {
-                            return "D";
-                        } else {
-                            if (density_pc <= 43.5) {
-                                return "E";
-                            } else {
-                                return "F";
-                            }
-                        }
-                    }
-                }
+                return "F";
             }
         }
     }
