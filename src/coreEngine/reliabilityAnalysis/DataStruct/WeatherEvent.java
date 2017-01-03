@@ -44,16 +44,11 @@ public class WeatherEvent extends ScenarioEvent implements Comparable<WeatherEve
     public boolean hasOverlap(ScenarioEvent event) {
         try {
             WeatherEvent wEvent = (WeatherEvent) event;
-            if (this.startPeriod <= wEvent.startPeriod && this.startPeriod >= wEvent.duration) {
-                return true;
-            } else if (this.startPeriod >= wEvent.startPeriod && this.startPeriod <= wEvent.startPeriod + wEvent.duration) {
-                return true;
-            }
+            return this.hasOverlap(wEvent);
         } catch (ClassCastException e) {
             System.err.println("Comparing events of different types.");
             return false;
         }
-        return false;
     }
 
     /**
@@ -63,9 +58,13 @@ public class WeatherEvent extends ScenarioEvent implements Comparable<WeatherEve
      * @return True if the events overlap, false otherwise.
      */
     public boolean hasOverlap(WeatherEvent wEvent) {
-        if (this.startPeriod <= wEvent.startPeriod && this.startPeriod >= wEvent.duration) {
+        if (this.startPeriod <= wEvent.startPeriod && this.startPeriod + this.duration >= wEvent.startPeriod) {
             return true;
         } else if (this.startPeriod >= wEvent.startPeriod && this.startPeriod <= wEvent.startPeriod + wEvent.duration) {
+            return true;
+        } else if (this.startPeriod > this.getEndPeriod() && this.getEndPeriod() >= wEvent.startPeriod) {
+            return true;
+        } else if (wEvent.startPeriod > wEvent.getEndPeriod() && wEvent.getEndPeriod() >= this.startPeriod) {
             return true;
         }
         return false;

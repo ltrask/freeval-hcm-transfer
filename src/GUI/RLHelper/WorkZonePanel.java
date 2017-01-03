@@ -339,6 +339,8 @@ public class WorkZonePanel extends javax.swing.JPanel {
         wzSpeedLimitTextField = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         latDistanceSpinner = new javax.swing.JSpinner();
+        jLabel5 = new javax.swing.JLabel();
+        alphaWZSpinner = new javax.swing.JSpinner();
         jPanel4 = new javax.swing.JPanel();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
@@ -631,7 +633,7 @@ public class WorkZonePanel extends javax.swing.JPanel {
         jPanel2.add(endSegmentCB);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Work Zone Parameters"));
-        jPanel3.setLayout(new java.awt.GridLayout(5, 2));
+        jPanel3.setLayout(new java.awt.GridLayout(6, 2));
 
         jLabel9.setText(" Severity");
         jPanel3.add(jLabel9);
@@ -663,6 +665,14 @@ public class WorkZonePanel extends javax.swing.JPanel {
 
         latDistanceSpinner.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(1.0f), Float.valueOf(0.0f), Float.valueOf(12.0f), Float.valueOf(0.01f)));
         jPanel3.add(latDistanceSpinner);
+
+        jLabel5.setText("WZ Capacity Drop (%)");
+        jLabel5.setToolTipText("The percentage drop in pre-breakdown capacity at the work zone due to queuing conditions (%).");
+        jPanel3.add(jLabel5);
+
+        alphaWZSpinner.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(13.4f), Float.valueOf(0.0f), Float.valueOf(30.0f), Float.valueOf(0.1f)));
+        alphaWZSpinner.setToolTipText("The percentage drop in pre-breakdown capacity at the work zone due to queuing conditions (%).");
+        jPanel3.add(alphaWZSpinner);
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -955,6 +965,7 @@ public class WorkZonePanel extends javax.swing.JPanel {
 
                 candidateWorkZone.setLateralDistance((float) latDistanceSpinner.getValue());
                 candidateWorkZone.setWorkZoneSpeedLimit(Float.valueOf(wzSpeedLimitTextField.getText()));
+                candidateWorkZone.alphaWZ = (float) alphaWZSpinner.getValue();
 
                 if (candidateWorkZone.checkFeasibleLaneClosure()) {
                     if (!checkOverlap(candidateWorkZone)) {
@@ -1184,6 +1195,7 @@ public class WorkZonePanel extends javax.swing.JPanel {
     private javax.swing.JPanel adjFactorPanelDeprecated;
     private javax.swing.JCheckBox allPeriodsCheckBox;
     private javax.swing.JCheckBox allSegmentsCheckBox;
+    private javax.swing.JSpinner alphaWZSpinner;
     private javax.swing.JComboBox areaTypeCB;
     private javax.swing.JComboBox barrierTypeCB;
     private javax.swing.JComboBox dayPickerBegin;
@@ -1202,6 +1214,7 @@ public class WorkZonePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

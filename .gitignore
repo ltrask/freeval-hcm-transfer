@@ -12,3 +12,4 @@ DebugOutput.csv
 
 *.bk
 *.seed
+/nbproject/private/

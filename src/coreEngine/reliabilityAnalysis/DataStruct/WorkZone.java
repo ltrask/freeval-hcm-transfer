@@ -2,6 +2,7 @@ package coreEngine.reliabilityAnalysis.DataStruct;
 
 import coreEngine.Helper.CEConst;
 import coreEngine.Helper.CEDate;
+import coreEngine.Helper.CEHelper;
 import coreEngine.Seed;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -88,6 +89,13 @@ public class WorkZone implements Serializable {
      * downstream of the work zone area.
      */
     private float fNr;
+
+    /**
+     * The percentage drop in pre-breakdown capacity at the work zone due to
+     * queuing conditions (%). The recommended default value for instances when
+     * an analyst lacks data is 13.4%.
+     */
+    public float alphaWZ = 13.4f;
 
     /**
      * Array to hold the Capacity Adjustment Factors for the work zone.
@@ -592,11 +600,12 @@ public class WorkZone implements Serializable {
         }
 
         float totalRampDensity = numRamp / seed.getValueFloat(CEConst.IDS_TOTAL_LENGTH_MI);
-        float workZoneLength = 0.0f;
-        for (int seg = this.startSegment; seg <= this.endSegment; seg++) {
-            workZoneLength += seed.getValueFloat(CEConst.IDS_SEGMENT_LENGTH_MI, seg);
-        }
-        return (workZoneLength + 6.0f) * totalRampDensity;
+        return totalRampDensity;
+        //float workZoneLength = 0.0f;
+        //for (int seg = this.startSegment; seg <= this.endSegment; seg++) {
+        //    workZoneLength += seed.getValueFloat(CEConst.IDS_SEGMENT_LENGTH_MI, seg);
+        //}
+        //return (workZoneLength + 6.0f) * totalRampDensity / workZoneLength;
     }
 
     /**
@@ -606,7 +615,7 @@ public class WorkZone implements Serializable {
      * @return Work Zone Capacity at the segment.
      */
     private float calcWZCapacity(int segment) {
-        return 100.0f * calcQDR(segment) / (100.0f - seed.getValueInt(CEConst.IDS_CAPACITY_ALPHA));
+        return 100.0f * calcQDR(segment) / (100.0f - alphaWZ);
     }
 
     /**
@@ -635,7 +644,7 @@ public class WorkZone implements Serializable {
         //System.out.println("fsr=" + calcfSr(segment, period));
         //System.out.println("LCSI=" + calcLCSI(segment));
         //System.out.println("fNr=" + fNr);
-        return 9.95f + (33.49f * calcfSr(segment, period)) + (0.53f * fS) - (5.6f * calcLCSI(segment)) - (3.84f * fBr) - (1.71f * fDN) - (1.45f * fNr);
+        return 9.95f + (33.49f * calcfSr(segment, period)) + (0.53f * fS) - (5.6f * calcLCSI(segment)) - (3.84f * fBr) - (1.71f * fDN) - (8.7f * fNr);
     }
 
     /**
@@ -648,6 +657,12 @@ public class WorkZone implements Serializable {
      */
     private float calculateCAF(int segment) {
         float c = seed.getValueInt(CEConst.IDS_MAIN_CAPACITY, segment, 0) / seed.getValueInt(CEConst.IDS_MAIN_NUM_LANES_IN, segment);
+        c = c / seed.getValueFloat(CEConst.IDS_GP_USER_CAF, segment, 0);
+        float fHV = (float) (1.0
+                / (1.0 + (seed.getValueFloat(CEConst.IDS_TRUCK_SINGLE_UNIT_PCT_MAINLINE, segment, 0) + seed.getValueFloat(CEConst.IDS_TRUCK_TRAILER_PCT_MAINLINE, segment, 0)) * (seed.getValueFloat(CEConst.IDS_TRUCK_CAR_ET) - 1.0) / 100.0));
+        //System.out.println("FHV: " + String.valueOf(fHV));
+        c = CEHelper.veh_to_pc(c, fHV);
+        //System.out.println("Capacity: " + String.valueOf(c));
         return Math.min(1.0f, calcWZCapacity(segment) / c);
     }
 
@@ -665,7 +680,7 @@ public class WorkZone implements Serializable {
     }
 
     /**
-     * Update the comptued adjustment factors of the work zone.
+     * Update the computed adjustment factors of the work zone.
      */
     public void updateAdjustmentFactors() {
         for (int seg = startSegment; seg <= endSegment; seg++) {

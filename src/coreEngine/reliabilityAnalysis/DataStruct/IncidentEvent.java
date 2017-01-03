@@ -232,21 +232,11 @@ public class IncidentEvent extends ScenarioEvent implements Comparable<IncidentE
     public boolean hasOverlap(ScenarioEvent event) {
         try {
             IncidentEvent incEvent = (IncidentEvent) event;
-            if (this.segment == incEvent.segment) {
-                if (this.startPeriod <= incEvent.startPeriod && this.startPeriod >= incEvent.duration) {
-                    return true;
-                } else if (this.startPeriod >= incEvent.startPeriod && this.startPeriod <= incEvent.startPeriod + incEvent.duration) {
-                    return true;
-                }
-            } else {
-                // The events cannot overlap if they are not in the same segment
-                return false;
-            }
+            return hasOverlap(incEvent);
         } catch (ClassCastException e) {
             System.err.println("Comparing events of different types.");
             return false;
         }
-        return false;
     }
 
     /**
@@ -258,9 +248,15 @@ public class IncidentEvent extends ScenarioEvent implements Comparable<IncidentE
     public boolean hasOverlap(IncidentEvent incEvent) {
         if (incEvent.getSegmentType() == this.segmentType) {
             if (this.segment == incEvent.getSegment()) {
-                if (this.startPeriod <= incEvent.startPeriod && this.startPeriod >= incEvent.duration) {
+                // Check if neither event wraps past end of study period
+                if (this.startPeriod <= incEvent.startPeriod && this.startPeriod + this.duration >= incEvent.startPeriod) {
                     return true;
                 } else if (this.startPeriod >= incEvent.startPeriod && this.startPeriod <= incEvent.startPeriod + incEvent.duration) {
+                    return true;
+                } else if (this.startPeriod > this.getEndPeriod() && this.getEndPeriod() >= incEvent.startPeriod) {
+                    return true;
+                }
+                if (incEvent.startPeriod > incEvent.getEndPeriod() && incEvent.getEndPeriod() >= this.startPeriod) {
                     return true;
                 }
             } else {

@@ -1236,7 +1236,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="2"/>
-            <Property name="rows" type="int" value="5"/>
+            <Property name="rows" type="int" value="6"/>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel9">
@@ -1311,6 +1311,20 @@
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="1.0" maximum="12.0" minimum="0.0" numberType="java.lang.Float" stepSize="0.01" type="number"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="WZ Capacity Drop (%)"/>
+                <Property name="toolTipText" type="java.lang.String" value="The percentage drop in pre-breakdown capacity at the work zone due to queuing conditions (%)."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="alphaWZSpinner">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="13.4" maximum="30.0" minimum="0.0" numberType="java.lang.Float" stepSize="0.1" type="number"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="The percentage drop in pre-breakdown capacity at the work zone due to queuing conditions (%)."/>
               </Properties>
             </Component>
           </SubComponents>

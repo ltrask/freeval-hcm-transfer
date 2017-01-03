@@ -17,7 +17,7 @@ public class FREEVAL_HCM {
     /**
      * Version of the FREEVAL
      */
-    public static String VERSION = "20160602";
+    public static String VERSION = "20170103";
 
     /**
      * Version of GUI and restrictions
