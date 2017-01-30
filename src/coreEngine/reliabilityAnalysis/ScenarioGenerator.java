@@ -630,7 +630,7 @@ public class ScenarioGenerator {
             // Post-processing of array
             for (int i = 0; i < wzDaysArray.length; i++) {
                 if (fullDayOfWeekInMonth[i] != 0) {
-                    wzDaysArray[i] = Math.round((wzDaysArray[i] / fullDayOfWeekInMonth[i]) * numReplications);
+                    wzDaysArray[i] = Math.round((((float) wzDaysArray[i]) / fullDayOfWeekInMonth[i]) * numReplications);
                 } else {
                     wzDaysArray[i] = 0;
                 }
