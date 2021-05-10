@@ -17,7 +17,7 @@ public class FREEVAL_HCM {
     /**
      * Version of the FREEVAL
      */
-    public static String VERSION = "20170103";
+    public static String VERSION = "20180328";
 
     /**
      * Version of GUI and restrictions
@@ -54,8 +54,7 @@ public class FREEVAL_HCM {
             java.util.jar.JarFile jar = new java.util.jar.JarFile(file);
             java.util.jar.Manifest manifest = jar.getManifest();
 
-            VERSION = manifest.getMainAttributes().getValue("Bundle-Version");
-
+            //VERSION = manifest.getMainAttributes().getValue("Bundle-Version");
             jar.close();
 
         } catch (Exception e) {

@@ -14,20 +14,87 @@ Update 12082014:
 Update 12232014:
     1. Major Update to FREEVAL-WZ GUI.
     2. Updated RL summary dialog with a new scenario summaries table.
-    3. Added ability to export a scenario to a FREEVAL-DSS project.
-    4. Bug fix for demand multiplier filter options.
-
-Update 12312014:
-    1. Adaptive Ramp Metering bug fix for ATDM and FREEVAL-DSS.
-    2. On-ramp diversion bug fix for FREEVAL-DSS.
+    3. Bug fix for demand multiplier filter options.
 
 Update 01072015
     1. Updated labeling for RL/ATDM dialogs
     2. Updated many variable names to better reflect HCM methodology
-    3. Fixed bug in FREEVAL-DSS where wrong ScenarioInfo was exported to .dss file.
 
 Update 01282015
     1. Updates to reflect changes discussed during TRB
     2. Added some HCM Look-up Tables
     3. Scenario Generation Bug Fixes
     4. Added factor for Capacity Increase Due to Ramp Metering
+
+Update 03252015
+    1. Fixed bug in weave methodology calculations
+    2. Fixed ML Fill Data bug where only integers were allowed as inputs
+    3. Various Minor labeling updates and fixes
+
+Update 03302015
+    1. Updated Merge/Diverge methodology to correctly reflect new chapter 14
+    2. Fixed bug where the user could not enter new average weather durations in reliability analysis
+    3. Addressed issue where FREEVAL crashed when new time periods were added
+    4. Minor labeling updates
+
+Update 04/07/2015
+    1. Fixed bug in weave methodolgy where segment capacaties where calculated incorrectly when the number of weaving lanes was greater than 1.
+    2. Addressed numerous issues raised in FREEVAL Beta test:
+      a. Seed Fill Dialog Labeling Update
+      b. Turning Managed Lanes on/off now displays a warning that any RL analysis will be deleted.
+      c. Added missing comma delimiter to export raw RL results
+      d. Selecting a value in a combo box (segment type, ramp side, etc.) now immediately updates the table and freeway graphic
+      e. Creating/opening a new seed returns the main table to inputs
+      f. Negative inputs no longer allowed for any values other than RL LAFI and RL LAFWZ
+      g. Adding/deleting a segment or period now correctly updates the project navigator
+
+Update 04/13/2015
+    1. Added ONR/OFR SUT and TT percentage fields.  The mainline SUT and TT values are now calculated automatically.
+    2. Addressed numerous issues raised in FREEVAL Beta test:
+      a. Added popup showing ATDM strategy values must be edited in the appropriate dialog
+      b. Fixed add/delete segment or period functionality to warn the user before any RL analysis is deleted
+      c. The RL analysis RNG seed now displays in the Project Navigator when the user hovers the mouse over the Project RL Analysis Folder
+      d. Errors in density for a facility will now display in the error log.
+      e. Added a blank/facility specific option to weather probabilities.
+      f. Added ability to import and export weather data sets.
+      g. Added warning to indicate when no scenarios have been selected for an ATDM analysis.
+      h. Added prompt to save project when a project is closed.
+      i. Updated the Contour Table's color ranges for speed to be more accurate.
+      j. Removed "Use Standard Distribution Button from the Incident Generation Panel.
+      k. Added "Use Savaed Seed File Distribution" and "Use Saved Seed File Durations" buttons to the Incident Generation Panel.
+      l. Added more error checking for input values for RL and ATDM Analysis dialogs.
+Update 05/21/2015
+    1. Fixed bug where users could not enter Incident or Crash Rates in the Incident Frequency Wizard Dialog
+Update 07/17/2015
+    1. Fixed bug where "shadow" directories were created by the program.
+    2. Various GUI improvements and bug fixes.
+Update 09/28/2015
+    1. Updated issue where queues would propogate incorrectly from an interacting bottleneck.
+    2. Addition of ramp metering active times and average rates.
+    3. Various GUI improvements and bug fixes.
+Update 12/03/2015
+    1. Fixed issue where denied vehicles were not properly accounted for in the first segment.
+Update 12/08/2015
+    1. Implemented cap at 100% for ramp SUT and TT %
+Update 06/02/2016
+    1. Computed downstream demand and truck % values now shown be default.
+Update 12/19/2016
+    1. Fixed RL Scenario Generator bug where events (incidents and weather) can overlap in certain cases.
+    2. Adjusted work-zone 3-107 SAF equation to be consistent with the HCM changes (now uses Total Ramp Desnsity instead of number of ramps).
+Update 01/05/2017
+    1. Update the 3-107 work zone CAF computation to correctly use the segment capacity in pc/h/ln as opposed to veh/h/ln.
+    2. Added new input for work zones in the scenario generation dialog to allow the analyst to set a work zone specific capacity drop % (alpha_wz).
+    3. Corrected bug in Scenario Generation toolbox where work zones were not being assigned correctly.
+Update 03/28/2017
+    1. Fixed a bug in the weaving capacity computation where the density and demand based capacities were not being compared correctly.
+    2. Bug fixes for merge and diverge density computations for 10 lane freeways (5 lanes each direction)
+    3. Updated estimated demand row in the Single Seed/Scen IO table to account for managed lane demands entering and exiting the facility.
+    4. Additional small bug fixes
+Update xx/xx/xxxx
+    1. Fix for Global inputs dialog such that the following inputs can now accept non-integer number (decimal) inputs
+        a. GP Single Unit Truck %
+        b. GP Tractor Trailer Truck %
+        c. Driver Population Capacity Adjust Factor (DPCAF)
+        d. Driver Population Speed Adjust Factor (DPSAF)
+        e. ML Single Unit Truck %
+        f. ML Tractor Trailer Truck %

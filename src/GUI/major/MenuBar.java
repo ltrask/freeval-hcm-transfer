@@ -5,6 +5,7 @@ import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.event.MenuListener;
+import javax.swing.filechooser.FileFilter;
 import main.FREEVAL_HCM;
 
 /**
@@ -193,6 +195,44 @@ public class MenuBar extends JMenuBar {
             }
         });
         analyzeMenu.add(showATDMSummaryItem);
+
+        printInterValues = new JMenuItem("Print Intermediate Values");
+        printInterValues.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public final void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFileChooser fc = new JFileChooser();
+                fc.setAcceptAllFileFilterUsed(false);
+                fc.setFileFilter(new FileFilter() {
+                    @Override
+                    public boolean accept(File file) {
+                        return file.isDirectory() || file.getAbsolutePath().endsWith(".csv");
+                    }
+
+                    @Override
+                    public String getDescription() {
+                        return "Comma Separated Value files (*.csv)";
+                    }
+                });
+                int success = fc.showSaveDialog(mainWindow);
+                if (success == JFileChooser.APPROVE_OPTION) {
+                    mainWindow.getActiveSeed().printDiss2 = true;
+                    mainWindow.getActiveSeed().printDissOutputFileName2 = fc.getSelectedFile().getAbsolutePath();
+                    if (mainWindow.getActiveSeed().printDissOutputFileName2.endsWith(".csv") == false) {
+                        mainWindow.getActiveSeed().printDissOutputFileName2 = mainWindow.getActiveSeed().printDissOutputFileName2 + ".csv";
+                    }
+                    mainWindow.getActiveSeed().enableForceOversat(true);
+                    mainWindow.getActiveSeed().singleRun(0, -1);
+                    JOptionPane.showMessageDialog(mainWindow, "Finished");
+                    mainWindow.getActiveSeed().enableForceOversat(false);
+                    mainWindow.getActiveSeed().printDiss2 = false;
+                }
+            }
+        });
+        if (false) {
+            analyzeMenu.addSeparator();
+            analyzeMenu.add(printInterValues);
+        }
+
         analyzeMenu.addMenuListener(new MenuListener() {
             @Override
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -855,6 +895,8 @@ public class MenuBar extends JMenuBar {
     private final JMenuItem assignATDMItem,
             deleteATDMItem,
             showATDMSummaryItem;
+
+    private final JMenuItem printInterValues;
 
     private final JMenuItem globalInputMenuItem,
             adaptiveRampMeteringMenuItem,

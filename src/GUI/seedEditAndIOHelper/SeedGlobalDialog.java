@@ -1395,7 +1395,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (truckSingleCheck.isEnabled() && truckSingleCheck.isSelected()) {
-            int num = Integer.parseInt(truckSingleText.getText());
+            float num = Float.parseFloat(truckSingleText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 if (seg == 0) {
                     for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
@@ -1419,7 +1419,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (truckTrailerCheck.isEnabled() && truckTrailerCheck.isSelected()) {
-            int num = Integer.parseInt(truckTrailerText.getText());
+            float num = Float.parseFloat(truckTrailerText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 if (seg == 0) {
                     for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
@@ -1435,7 +1435,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (DPCAFCheck.isEnabled() && DPCAFCheck.isSelected()) {
-            int num = Integer.parseInt(DPCAFText.getText());
+            float num = Float.parseFloat(DPCAFText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
                     seed.setValue(CEConst.IDS_GP_USER_DPCAF, num, seg, period);
@@ -1444,7 +1444,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (DPSAFCheck.isEnabled() && DPSAFCheck.isSelected()) {
-            int num = Integer.parseInt(DPSAFText.getText());
+            float num = Float.parseFloat(DPSAFText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
                     seed.setValue(CEConst.IDS_GP_USER_DPSAF, num, seg, period);
@@ -1518,7 +1518,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (manageLaneCheck.isSelected() && truckSingleMLCheck.isSelected()) {
-            int num = Integer.parseInt(truckSingleMLText.getText());
+            float num = Float.parseFloat(truckSingleMLText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
                     seed.setValue(CEConst.IDS_ML_TRUCK_SINGLE_PERCENTAGE, num, seg, period);
@@ -1527,7 +1527,7 @@ public class SeedGlobalDialog extends javax.swing.JDialog {
         }
 
         if (manageLaneCheck.isSelected() && truckTrailerMLCheck.isSelected()) {
-            int num = Integer.parseInt(truckTrailerMLText.getText());
+            float num = Float.parseFloat(truckTrailerMLText.getText());
             for (int seg = 0; seg < seed.getValueInt(CEConst.IDS_NUM_SEGMENT); seg++) {
                 for (int period = 0; period < seed.getValueInt(CEConst.IDS_NUM_PERIOD); period++) {
                     seed.setValue(CEConst.IDS_ML_TRUCK_TRAILER_PERCENTAGE, num, seg, period);

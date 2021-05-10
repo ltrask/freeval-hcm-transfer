@@ -3142,7 +3142,8 @@ public class Seed implements Serializable {
                 case CEConst.IDS_ML_NUM_LANES:
                     return MLSegments.get(seg).inMainlineNumLanes.get(period);
                 case CEConst.IDS_ML_DEMAND_VEH:
-                    return MLSegments.get(seg).inMainlineDemand_veh.get(period);
+//                    return MLSegments.get(seg).inMainlineDemand_veh.get(period);
+                    return (seg == 0) ? MLSegments.get(seg).inMainlineDemand_veh.get(period) : MLSegments.get(seg).unadjustedSegDemand[period];
                 case CEConst.IDS_ML_ATDM_LAF:
                     return getATDMLAF(scen, atdm, seg, period, CEConst.SEG_TYPE_ML);
                 case CEConst.IDS_ML_FREE_FLOW_SPEED:
@@ -3580,7 +3581,8 @@ public class Seed implements Serializable {
                     return GPSegments.get(seg).getScenAllDensity_pc(period);
                 case CEConst.IDS_INFLUENCED_DENSITY_PC:
                     checkInBuffer(scen, atdm);
-                    return Math.max(GPSegments.get(seg).scenIADensity_pc[period], GPSegments.get(seg).getScenAllDensity_pc(period));
+//                    return Math.max(GPSegments.get(seg).scenIADensity_pc[period], GPSegments.get(seg).getScenAllDensity_pc(period));
+                    return GPSegments.get(seg).scenIADensity_pc[period];
                 case CEConst.IDS_OCCUPANCY_PCT:
                     checkInBuffer(scen, atdm);
                     return GPSegments.get(seg).scenAllDensity_veh[period] / 2.04f;  //100*(L_D+L_V)/5280 = 2.04, L_D = 6 ft (Average length of sensor), L_V = 20 (Average length of vehicles)
@@ -4383,7 +4385,7 @@ public class Seed implements Serializable {
                     break;
 
                 //parameters only related to the first mainline segment
-                case CEConst.IDS_ML_DEMAND_VEH:
+                //case CEConst.IDS_ML_DEMAND_VEH:
                 case CEConst.IDS_VHD_MDE:
                 case CEConst.IDS_ML_VHD_MDE:
                     if (seg > 0) {
@@ -4394,6 +4396,7 @@ public class Seed implements Serializable {
                 case CEConst.IDS_MAIN_DEMAND_VEH:
                 case CEConst.IDS_TRUCK_SINGLE_UNIT_PCT_MAINLINE:
                 case CEConst.IDS_TRUCK_TRAILER_PCT_MAINLINE:
+                case CEConst.IDS_ML_DEMAND_VEH:
                     if (seg > 0) {
                         return CEConst.IDS_NA_SPECIAL;
                     }
@@ -6038,11 +6041,13 @@ public class Seed implements Serializable {
     /**
      * For Debugging Purposes Only
      */
-    public final boolean printDiss = false;
+    public final boolean printDiss = true;
+    public boolean printDiss2 = false;
 
     /**
      * For Debugging Purposes Only
      */
-    public final String printDissOutputFileName = "debug.txt";
+    public final String printDissOutputFileName = "C:\\Users\\ltrask\\Documents\\GitHub\\Freeval_HCM\\";
+    public String printDissOutputFileName2 = "C:\\Users\\ltrask\\Documents\\GitHub\\Freeval_HCM\\Notes\\";
     // </editor-fold>
 }

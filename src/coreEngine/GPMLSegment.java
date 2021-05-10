@@ -750,6 +750,7 @@ public class GPMLSegment implements Serializable {
                 unadjustedSegDemand[period] = inUpSeg.unadjustedSegDemand[period];
                 mainSUT_Up = unadjustedSegDemand[period] * inUpSeg.inMainlineTruckSingle.get(period);
                 mainTT_Up = unadjustedSegDemand[period] * inUpSeg.inMainlineTruckTrailer.get(period);
+                // Accounting for GP on-ramp entering demand
                 if (this.inType == CEConst.SEG_TYPE_ONR
                         || this.inType == CEConst.SEG_TYPE_ONR_B
                         || this.inType == CEConst.SEG_TYPE_W
@@ -758,6 +759,7 @@ public class GPMLSegment implements Serializable {
                     onrSUT = inOnDemand_veh.get(period) * this.inONRTruckSingle.get(period);
                     onrTT = inOnDemand_veh.get(period) * this.inONRTruckTrailer.get(period);
                 }
+                // Accounting for GP off-ramp exiting demand
                 if (inUpSeg != null
                         && (inUpSeg.inType == CEConst.SEG_TYPE_OFR
                         || inUpSeg.inType == CEConst.SEG_TYPE_OFR_B
@@ -766,6 +768,22 @@ public class GPMLSegment implements Serializable {
                     unadjustedSegDemand[period] -= inUpSeg.inOffDemand_veh.get(period);
                     ofrSUT_Up = inUpSeg.inOffDemand_veh.get(period) * inUpSeg.inOFRTruckSingle.get(period);
                     ofrTT_Up = inUpSeg.inOffDemand_veh.get(period) * inUpSeg.inOFRTruckTrailer.get(period);
+                }
+                if (this.inType == CEConst.SEG_TYPE_ACS) {
+                    if (this.inIndex == 3 && period == 0) {
+                        //System.out.println(this.inOnDemand_veh.get(period));
+                        //System.out.println(this.inOffDemand_veh.get(period));
+                        //unadjustedSegDemand[period] -= inOffDemand_veh.get(period);
+                    }
+                    unadjustedSegDemand[period] += inOnDemand_veh.get(period);
+                }
+                if (this.inUpSeg.inType == CEConst.SEG_TYPE_ACS) {
+                    if (this.inIndex == 3 && period == 0) {
+                        //System.out.println(this.inOnDemand_veh.get(period));
+                        //System.out.println(this.inOffDemand_veh.get(period));
+                        //unadjustedSegDemand[period] -= inOffDemand_veh.get(period);
+                    }
+                    unadjustedSegDemand[period] -= inUpSeg.inOffDemand_veh.get(period);
                 }
                 calcSUT = (mainSUT_Up + onrSUT - ofrSUT_Up) / unadjustedSegDemand[period];
                 this.inMainlineTruckSingle.set(period, Math.max(0.0f, calcSUT));
@@ -1217,7 +1235,7 @@ public class GPMLSegment implements Serializable {
         cIW = (inNWL <= 2 ? 2400 : 3500) / VR;/*scenVR[period]*/ /// inNWL;
         //Equation 12-6, 12-8
 
-        cW = CEHelper.pc_to_veh(Math.min(cIWL, cIW) * scenMainlineNumLanes[period], inMainlineFHV[period]);
+        cW = CEHelper.pc_to_veh(Math.min(cIWL * scenMainlineNumLanes[period], cIW), inMainlineFHV[period]);
         //System.out.println(inIndex + "," + VR + "," + cIFL + "," + cIWL + "," + cIW + "," + cW);
         return Math.min(cW * calCAF(scen, atdm, period),
                 funcBasicMainlineCapacity(scen, atdm, period)); //vph
@@ -1581,7 +1599,7 @@ public class GPMLSegment implements Serializable {
         //Exhibit 13-11 : HCM Page 13-20
         float v_12 = funcOnFlowRateInLanes1and2(status, period);
         float v_F = funcOnOff_vF(status, period);
-        int N_O = Math.max(scenMainlineNumLanes[period] - 2, 0);
+        int N_O = Math.min(Math.max(scenMainlineNumLanes[period] - 2, 0), 2);
         float v_R12 = v_12 + funcOn_vR(status, period);
         float M_S = (float) (0.321 + 0.0039 * Math.exp(v_R12 / 1000.0) - 2e-6 * inAccDecLength_ft * scenOnFFS[period]);
         //negative on ramp segment speed may occur due to HCM equations
@@ -1619,31 +1637,55 @@ public class GPMLSegment implements Serializable {
         //Equation 13-2 : HCM Page 13-12
         result = v_F * P_FM;
         //HCM Page 13-16, check reasonableness of the lane distribution prediction
-        switch (scenMainlineNumLanes[period]) {
-            case 3: //6-Lane, 3 lanes each direction
-                //Equation 13-14 : HCM Page 13-16
-                float v_3 = v_F - result;
-                //Equation 13-15 : HCM Page 13-16
-                if (v_3 > 2700) {
-                    result = v_F - 2700;
-                }
-                //Equation 13-16 : HCM Page 13-16
-                if (v_3 > 1.5 * result / 2) {
-                    result = v_F / 1.75f;
-                }
-                break;
-            case 4: //8-Lane, 4 lanes each direction
-                //Equation 13-14 : HCM Page 13-16
-                float v_av34 = (v_F - result) / 2;
-                //Equation 13-15 : HCM Page 13-16
-                if (v_av34 > 2700) {
-                    result = v_F - 5400;
-                }
-                //Equation 13-16 : HCM Page 13-16
-                if (v_av34 > 1.5 * result / 2) {
-                    result = v_F / 2.5f;
-                }
-                break;
+        if (scenMainlineNumLanes[period] == 3) {
+            //6-Lane, 3 lanes each direction
+            //Equation 13-14 : HCM Page 13-16
+            float v_3 = v_F - result;
+            //Equation 13-15 : HCM Page 13-16
+            if (v_3 > 2700) {
+                result = v_F - 2700;
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_3 > 1.5 * result / 2) {
+                result = v_F / 1.75f;
+            }
+        } else if (scenMainlineNumLanes[period] == 4) {
+            //8-Lane, 4 lanes each direction
+            //Equation 13-14 : HCM Page 13-16
+            float v_av34 = (v_F - result) / 2;
+            //Equation 13-15 : HCM Page 13-16
+            float v12a = -1.0f;
+            if (v_av34 > 2700) {
+                v12a = v_F - (2700 * 2);
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_av34 > (1.5 * result / 2)) {
+                v12a = Math.max(v12a, v_F / 2.5f);
+            }
+            if (v12a > 0) {
+                // Positive value for v12a indicates at least one limitation on
+                // outer lane flow rate was violated and v12 (result) is updated
+                result = v12a;
+            }
+        } else if (scenMainlineNumLanes[period] > 4) {
+            int numOuterLanes = scenMainlineNumLanes[period] - 2;
+            //8-Lane, 4 lanes each direction
+            //Equation 13-14 : HCM Page 13-16
+            float v_av34 = (v_F - result) / 2;
+            //Equation 13-15 : HCM Page 13-16
+            float v12a = -1.0f;
+            if (v_av34 > 2700) {
+                v12a = v_F - (2700 * numOuterLanes);
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_av34 > (1.5 * result / 2)) {
+                v12a = Math.max(v12a, v_F / ((1.5f * 2 + 2.0f) / 2));
+            }
+            if (v12a > 0) {
+                // Positive value for v12a indicates at least one limitation on
+                // outer lane flow rate was violated and v12 (result) is updated
+                result = v12a;
+            }
         }
         //if number of lanes is 1, it will be multiplied by 2
         return result * (scenMainlineNumLanes[period] > 1 ? 1 : 2);
@@ -1677,9 +1719,9 @@ public class GPMLSegment implements Serializable {
                     if (inOnNumLanes == 1) {
                         float S_FR = scenOnFFS[period];
                         if (v_F / S_FR <= 72) {
-                            result = (float) (0.2178 - 0.0000125 * v_R + 0.0115 * inAccDecLength_ft / S_FR);
+                            result = (float) (0.2178 - 0.000125 * v_R + 0.0115 * inAccDecLength_ft / S_FR);
                         } else {
-                            result = (float) (0.2178 - 0.0000125 * v_R);
+                            result = (float) (0.2178 - 0.000125 * v_R);
                         }
                     } else {
                         // Account for two-lane off-ramps (page 14-31)
@@ -1694,7 +1736,22 @@ public class GPMLSegment implements Serializable {
             }
         } else {
             //take care of 10 or more lanes case
-            result = (float) (0.2178 * 4 / scenMainlineNumLanes[period]);
+            // Should be the same as the 8 or mores lanes case for now
+            // Adjustment actually accounted for in the funcOnOff_vF computation
+            if (inOnNumLanes == 1) {
+                float S_FR = scenOnFFS[period];
+                if (v_F / S_FR <= 72) {
+                    result = (float) (0.2178 - 0.000125 * v_R + 0.0115 * inAccDecLength_ft / S_FR);
+                } else {
+                    result = (float) (0.2178 - 0.000125 * v_R);
+                }
+            } else {
+                // Account for two-lane off-ramps (page 14-31)
+                result = 0.209f;
+            }
+            if (inOnSide == CEConst.RAMP_SIDE_LEFT) {
+                result *= 1.20;
+            }
         }
 
         return result;
@@ -1725,6 +1782,32 @@ public class GPMLSegment implements Serializable {
             default:
                 result = 0;
         }
+        if (scenMainlineNumLanes[period] > 4) {
+            if (this.inType == CEConst.SEG_TYPE_ONR) {
+                if (result < 5500) {
+                    result = (1.0f - 0.22f) * result;
+                } else if (result <= 6499) {
+                    result = (1.0f - 0.24f) * result;
+                } else if (result <= 7499) {
+                    result = (1.0f - 0.27f) * result;
+                } else if (result <= 8499) {
+                    result = (1.0f - 0.285f) * result;
+                } else {
+                    result = result - 2500;
+                }
+            } else {
+                if (result < 4000) {
+                    // do nothing, result = result;
+                } else if (result <= 5499) {
+                    result = (1.0f - 0.1f) * result;
+                } else if (result <= 6999) {
+                    result = (1.0f - 0.15f) * result;
+                } else {
+                    result = (1.0f - 0.2f) * result;
+                }
+            }
+        }
+
         return result;
     }
 
@@ -1920,7 +2003,7 @@ public class GPMLSegment implements Serializable {
         float v_F = funcOnOff_vF(status, period);
         //float P_FD = funcOffRemainFactor(status, period);
         float v_R = funcOff_vR(status, period);
-        int N_O = Math.max(scenMainlineNumLanes[period] - 2, 0);
+        int N_O = Math.min(Math.max(scenMainlineNumLanes[period] - 2, 0), 2);
         float D_S = (float) (0.883 + 0.00009 * v_R - 0.013 * scenOffFFS[period]);
         float S_R = scenMainlineFFS[period] - (scenMainlineFFS[period] - 42) * D_S;
         if (N_O == 0) {
@@ -2030,31 +2113,50 @@ public class GPMLSegment implements Serializable {
 
         //check reasonableness of the lane distribution prediction
         //HCM Page 13-16
-        switch (scenMainlineNumLanes[period]) {
-            case 3: //6-Lane, 3 lanes each direction
-                //Equation 13-14 : HCM Page 13-16
-                float v_3 = v_F - v_12;
-                //Equation 13-15 : HCM Page 13-16
-                if (v_3 > 2700) {
-                    v_12 = v_F - 2700;
-                }
-                //Equation 13-16 : HCM Page 13-16
-                if (v_3 > 1.5 * v_12 / 2) {
-                    v_12 = v_F / 1.75f;
-                }
-                break;
-            case 4: //8-Lane, 4 lanes each direction
-                //Equation 13-14 : HCM Page 13-16
-                float v_av34 = (v_F - v_12) / 2;
-                //Equation 13-15 : HCM Page 13-16
-                if (v_av34 > 2700) {
-                    v_12 = v_F - 5400;
-                }
-                //Equation 13-16 : HCM Page 13-16
-                if (v_av34 > 1.5 * v_12 / 2) {
-                    v_12 = v_F / 2.5f;
-                }
-                break;
+        if (scenMainlineNumLanes[period] == 3) { //6-Lane, 3 lanes each direction
+            //Equation 13-14 : HCM Page 13-16
+            float v_3 = v_F - v_12;
+            //Equation 13-15 : HCM Page 13-16
+            if (v_3 > 2700) {
+                v_12 = v_F - 2700;
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_3 > 1.5 * v_12 / 2) {
+                v_12 = v_F / 1.75f;
+            }
+        } else if (scenMainlineNumLanes[period] == 4) {//8-Lane, 4 lanes each direction
+            //Equation 13-14 : HCM Page 13-16
+            float v_av34 = (v_F - v_12) / 2;
+            //Equation 13-15 : HCM Page 13-16
+            float v_12a = -1.0f;
+            if (v_av34 > 2700) {
+                v_12a = v_F - 5400;
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_av34 > 1.5 * v_12 / 2) {
+                v_12a = Math.max(v_12a, v_F / 2.5f);
+            }
+            if (v_12a > 0) {
+                // A positive value indicates at least one limitation on outer
+                // lane flow rate was violated.
+                v_12 = v_12a;
+            }
+        } else if (scenMainlineNumLanes[period] > 4) {//10+ Lane, 5+ lanes each direction
+            //int numOuterLanes = scenMainlineNumLanes[period] - 2;
+            float v_av34 = (v_F - v_12) / 2;
+            float v_12a = -1.0f;
+            if (v_av34 > 2700) {
+                v_12a = v_F - (2700 * 2);
+            }
+            //Equation 13-16 : HCM Page 13-16
+            if (v_av34 > 1.5 * v_12 / 2) {
+                v_12a = Math.max(v_12a, v_F / ((1.5f * 2 + 2.0f) / 2.0f));
+            }
+            if (v_12a > 0) {
+                // A positive value indicates at least one limitation on outer
+                // lane flow rate was violated.
+                v_12 = v_12a;
+            }
         }
         return v_12 * (scenMainlineNumLanes[period] > 1 ? 1 : 2); //Only used for off ramp segment density, speed only depends on V_R
     }
@@ -2092,7 +2194,12 @@ public class GPMLSegment implements Serializable {
             }
         } else {
             //take care of 10 or more lanes case
-            result = (float) (0.436 * 4 / scenMainlineNumLanes[period]);
+            // Should be the same as for 8 lane for now
+            // Adjustment actually accounted for in the funcOnOff_vF computation
+            result = (inOffNumLanes == 1) ? 0.436f : 0.260f;
+            if (inOffSide == CEConst.RAMP_SIDE_LEFT) {
+                result *= 1.10;
+            }
         }
         return result;
     }
@@ -2547,6 +2654,33 @@ public class GPMLSegment implements Serializable {
 
             UV[step] = funcUV(step);
 
+            if (seed.printDiss2) {
+                if (inIndex == 0 && period == 0 && step == 0) {
+                    BufferedWriter bw = null;
+                    try {
+                        System.out.println("Printing to " + seed.printDissOutputFileName2);
+                        bw = new BufferedWriter(new FileWriter(seed.printDissOutputFileName2, false));
+                        //bw.write("Segment,Period,Step,NV,MF,MI,MO1,MO2,MO3,ONRF,OFRF,DEF,UV,SF,KQ,ONRQ\n");
+                        bw.write("Segment,Period,Step,NV,MF,MI,MO1,MO2,MO3,ONRO,ONRF,OFRF,DEF,UV,SF,KQ,ONRQ\n");
+                        bw.close();
+                    } catch (IOException e) {
+                        System.out.println("Initial Write Failed...");
+                    }
+                }
+                BufferedWriter bw = null;
+                try {
+
+                    bw = new BufferedWriter(new FileWriter(seed.printDissOutputFileName2, true));
+                    bw.write(inIndex + "," + period + "," + step + "," + NV[step] + "," + MF[step]
+                            + "," + MI[step] + "," + MO1[step] + "," + MO2[step] + "," + MO3[step]
+                            + "," + ONRO[step] + "," + ONRF[step]
+                            + "," + OFRF[step] + "," + DEF[step] + "," + UV[step]
+                            + "," + SF[step] + "," + KQ[step] + "," + ONRQ[step] + "\n");
+                    bw.close();
+                } catch (IOException e) {
+                    System.out.println("Error at: " + String.valueOf(inIndex) + "," + String.valueOf(period) + "," + String.valueOf(step));
+                }
+            }
             //if (seed.printDiss) {
             //System.out.println(inIndex + "," + period + "," + step + "," + NV[step] + "," + MF[step]
             //        + "," + MI[step] + "," + MO1[step] + "," + MO2[step] + "," + MO3[step] + "," + ONRF[step]
@@ -3380,30 +3514,30 @@ public class GPMLSegment implements Serializable {
             float density_pc = CEHelper.veh_to_pc(scenAllDensity_veh[period], inMainlineFHV[period]);//scenAllDensity_pc[period];
             if (seed.inUrbanRuralType != CEConst.SEED_RURAL) {
                 //Exhibit 11-5: HCM Page 11-7
-                if (density_pc <= 11.5) {
+                if (density_pc <= 11) {
                     return "A";
-                } else if (density_pc <= 18.5) {
+                } else if (density_pc <= 18) {
                     return "B";
-                } else if (density_pc <= 26.5) {
+                } else if (density_pc <= 26) {
                     return "C";
-                } else if (density_pc <= 35.5) {
+                } else if (density_pc <= 35) {
                     return "D";
-                } else if (density_pc <= 45.5) {
+                } else if (density_pc <= 45) {
                     return "E";
                 } else {
                     return "F";
                 }
             } else //new LOS for rural
             {
-                if (density_pc <= 6.5) {
+                if (density_pc <= 6) {
                     return "A";
-                } else if (density_pc <= 14.5) {
+                } else if (density_pc <= 14) {
                     return "B";
-                } else if (density_pc <= 22.5) {
+                } else if (density_pc <= 22) {
                     return "C";
-                } else if (density_pc <= 29.5) {
+                } else if (density_pc <= 29) {
                     return "D";
-                } else if (density_pc <= 39.5) {
+                } else if (density_pc <= 39) {
                     return "E";
                 } else {
                     return "F";
@@ -3414,15 +3548,15 @@ public class GPMLSegment implements Serializable {
                     = (scenType[period] == CEConst.SEG_TYPE_W || scenType[period] == CEConst.SEG_TYPE_ACS
                             ? CEHelper.veh_to_pc(scenAllDensity_veh[period], inMainlineFHV[period])
                             : scenIADensity_pc[period]);
-            if (density_pc <= 10.5) {
+            if (density_pc <= 10) {
                 return "A";
-            } else if (density_pc <= 20.5) {
+            } else if (density_pc <= 20) {
                 return "B";
-            } else if (density_pc <= 28.5) {
+            } else if (density_pc <= 28) {
                 return "C";
-            } else if (density_pc <= 35.5) {
+            } else if (density_pc <= 35) {
                 return "D";
-            } else if (density_pc <= 43.5) {
+            } else if (density_pc <= 43) {
                 return "E";
             } else {
                 return "F";

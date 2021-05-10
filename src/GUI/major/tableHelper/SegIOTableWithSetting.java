@@ -1656,6 +1656,7 @@ public class SegIOTableWithSetting implements FREEVAL_TableWithSetting {
                             this.setBackground(Color.DARK_GRAY);
                             switch (setting.identifier) {
                                 case CEConst.IDS_MAIN_DEMAND_VEH:
+                                case CEConst.IDS_ML_DEMAND_VEH:
                                     setText(String.valueOf(seed.getValueInt(setting.identifier, column, period)));
                                     break;
                                 default:
